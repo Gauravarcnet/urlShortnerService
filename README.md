@@ -5,15 +5,15 @@ Production-ready URL shortener with registration login authentication, rate limi
 ## 🚀 Quick Setup
 
 
-unzip & Install
+git clone
 npm install
 
 install docker if not 
-docker compose down
-npm run build
-docker compose up --build -d --scale app=3 -d to scale 3 instance otherwise simple run app = 1
+-docker compose down
+-npm run build
+-docker compose up --build -d --scale app=3 -d to scale 3 instance otherwise simple run app = 1
 
-docker compose ps
+-docker compose ps
 Start (Docker Compose)
 API ready: http://localhost:8080
 Swagger Docs:  run on swagger.json in online editor swagger open editor
@@ -28,7 +28,6 @@ Swagger Docs:  run on swagger.json in online editor swagger open editor
 | `GET` | `/:code` | Redirect to long URL | No |
 | `GET` | `/health` | Health check | No |
 
-## 🧪 Example Requests
 
 ### 1. Register User
 
