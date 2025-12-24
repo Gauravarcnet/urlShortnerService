@@ -25,7 +25,7 @@ Swagger Docs:  run on swagger.json in online editor swagger open editor
 | `POST` | `/auth/register` | Create user | No |
 | `POST` | `/auth/login` | Get JWT token | No |
 | `POST` | `/shorten` | Create short URL | Yes |
-| `GET` | `/:code` | Redirect to long URL | No |
+| `GET` | `/:code` | Redirect to long URL | Yes |
 | `GET` | `/health` | Health check | No |
 
 
