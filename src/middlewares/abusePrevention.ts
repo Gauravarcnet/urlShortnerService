@@ -3,11 +3,11 @@ import { Request, Response, NextFunction } from 'express';
 import { redis } from '../lib/redisClient';
 import { rateLimiter } from './rateLimiter';
 
-const abuseLimiter = rateLimiter({ 
-  keyPrefix: 'abuse', 
-  limit: 3,      // 3 suspicious URLs/min per IP
-  windowSec: 300 // 5 min window
-});
+// const abuseLimiter = rateLimiter({ 
+//   keyPrefix: 'abuse', 
+//   limit: 3,      // 3 suspicious URLs/min per IP
+//   windowSec: 300 // 5 min window
+// });
 
 const BAD_URLS = [
   /localhost/i, /127\.0\.0\.1/i, 
@@ -16,7 +16,6 @@ const BAD_URLS = [
 ];
 
 export const abusePrevention = [
-  abuseLimiter,
   async (req: Request, res: Response, next: NextFunction) => {
     try {
       //  Nginx X-Forwarded-For support (multi-server)
