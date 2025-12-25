@@ -25,10 +25,6 @@ router.post(
 
 // Redirect
 router.get('/:code', 
-  authMiddleware,  //  PROTECTED
-  abusePrevention,                   // Block bad URLs + IP bans
-  rateLimiter({ keyPrefix: 'code:min',  limit: 15,  windowSec: 60 }),   // 15/min
-  rateLimiter({ keyPrefix: 'code:hour', limit: 150, windowSec: 3600 }), // 150/
   redirectHandler);
 
 export default router;
